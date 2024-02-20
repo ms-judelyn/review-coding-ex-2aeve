@@ -1,0 +1,55 @@
+//This line reads a double input or import the "scanner" input from the user
+import java.util.Scanner;
+
+//It serves as the entry point for java program
+public class RestaurantBill {
+
+    //Define main method
+    public static void main(String[] args) {
+
+        //Object that reads input from the standard input stream
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask user for inputs
+        System.out.print("Enter the total number of people: ");
+
+        //This line reads an integer input
+        int numPeople = scanner.nextInt();
+
+        //This line prints a message to prompt the user to input the total bill amount
+        System.out.print("Enter the total bill amount: $");
+
+        //This line reads a double input
+        double totalBill = scanner.nextDouble();
+
+        //This line prints a message to prompt the user to input the percentage of tip they want to leave
+        System.out.print("Enter the percentage of tip you want to leave: ");
+
+        //This line reads a double input
+        double tipPercentage = scanner.nextDouble();
+
+        // Calculate service charge based on the number of people
+        double serviceCharge;
+        if (numPeople >= 1 && numPeople <= 4) {
+            serviceCharge = 0.05 * totalBill;
+        } else if (numPeople >= 5 && numPeople <= 7) {
+            serviceCharge = 0.08 * totalBill;
+        } else {
+            serviceCharge = 0.15 * totalBill;
+        }
+
+        // Calculate tip amount
+        double tipAmount = (tipPercentage / 100) * totalBill;
+
+        // Calculate total amount to pay
+        double totalAmount = totalBill + serviceCharge + tipAmount;
+
+        // Display results
+        System.out.println("\nService Charge: $" + serviceCharge);
+        System.out.println("Tip Amount: $" + tipAmount);
+        System.out.println("Total Amount to Pay: $" + totalAmount);
+
+        //Close the scanner
+        scanner.close();
+    }
+}
