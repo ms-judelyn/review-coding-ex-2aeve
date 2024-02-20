@@ -1,0 +1,75 @@
+
+// Import the Scanner class from the java.util package
+import java.util.Scanner;
+
+// Blueprint for creating objects and contains the method and fields of the program
+public class RestaurantBill {
+
+    //Define the main method
+    public static void main(String[] args) {
+
+        // Create a scanner object named input
+        Scanner scanner = new Scanner(System.in);
+
+        // Print a message asking for the number of people in the table
+        System.out.print("Enter the Number Of People In The Table :");
+
+        // Read the NumberOfPeople in the table from the user input
+        int NumOfPeople = scanner.nextInt();
+
+        // Print a message asking for the TotalBillAmount
+        System.out.print("Enter the Total Bill Amount :");
+
+        // Read the TotalBillAmount from the user input
+        double TotalBillAmount = scanner.nextDouble();
+
+        // Print a message asking for the tip percentage
+        System.out.print("Enter the Tip Percentage :");
+
+        // Read the TipPercentage from the user input
+        double TipPercentage = scanner.nextDouble();
+
+        //Calculate the TipAmount
+        double TipAmount = TotalBillAmount * (TipPercentage / 100);
+
+        //Initialize Service Charge
+        double serviceCharge;
+
+        //Create if statement
+        if (NumOfPeople >= 1 && NumOfPeople <= 4) {
+
+            //Calculate the ServiceCharge
+            serviceCharge =  0.05;
+        }
+        //Create else-if statement
+        else if (NumOfPeople >= 5 && NumOfPeople <= 7) {
+
+            //Calculate the ServiceCharge
+            serviceCharge =  0.08;
+
+        }
+        //Create else-if statement
+        else  {
+            //Calculate the ServiceCharge
+           serviceCharge = 0.15;
+
+        }
+
+        //Calculate ServiceChargeAmount
+        double ServiceChargeAmount = TotalBillAmount * serviceCharge;
+        //Calculate the Total Amount To Pay
+        double totalAmount = TotalBillAmount + TipAmount + ServiceChargeAmount;
+
+        //Print the ServiceCharge
+        System.out.printf("The Service Charge :$%.2f%n", ServiceChargeAmount);
+
+        //Print TipAmount
+        System.out.printf("The Tip Amount :$%.2f%n", TipAmount);
+
+        //Print Total Amount To Pay
+        System.out.printf("The Total Amount To Pay :$%.2f%n", totalAmount);
+
+        //Close the Scanner Object
+        scanner.close();
+    }
+}
