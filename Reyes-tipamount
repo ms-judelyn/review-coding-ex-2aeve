@@ -1,0 +1,41 @@
+//Import the Scanner from the java util package
+import java.util.Scanner;
+
+//This class is the blueprint for creating objects and contains the method and fields of the program
+public class serviceCharge {
+
+    //Define the main method
+    public static void main(String[] args) {
+
+        //Create a scanner object named input
+        Scanner scanner = new Scanner(System.in);
+
+        //Print a message asking for the total bill amount
+        System.out.print("Enter the total bill amount:");
+
+        //Read the bill amount from the user input
+        double totalBillAmount = scanner.nextDouble();
+
+        //Prompt the user to enter the tip percentage
+        System.out.print("Enter the tip percentage:");
+
+        //Read the tip percentage from the user
+        double tipPercentage = scanner.nextDouble();
+
+        //Calculate the tip amount
+        double tipAmount = totalBillAmount * (tipPercentage/100);
+
+        //Calculate the total amount pay
+        double totalAmountPay = totalBillAmount + tipAmount;
+
+        //Output the tip amount
+        System.out.println("Tip amount: $ " + tipAmount);
+
+        //Output the total amount pay
+        System.out.println("Total amount to pay: $ " + totalAmountPay);
+
+        //Close the scanner object
+        scanner.close();
+
+    }
+}
