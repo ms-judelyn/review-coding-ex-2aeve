@@ -1,0 +1,36 @@
+/import the Scanner class from the java.util
+import java.util.Scanner;
+//Define the public class name TipCalcu
+public class TipCalcu {
+    //Define the main method which serves as the entry point for the program
+    public static void main(String[] args) {
+
+        //Create a Scanner object named scanner to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        //Prompt the user to enter the total bill amount
+        System.out.println("Enter the total bill amount: ");
+        double totalbill= scanner.nextDouble();
+
+        //Prompt the user tp enter the tip percentage
+        System.out.println("Enter the tip percentage: ");
+        double tippercentage=scanner.nextDouble();
+
+        //Calculate the tip amount based on the total bill and the tip percentage
+        double tipamount = (totalbill*tippercentage)/100;
+       
+        //Display the calculated tip amount
+        System.out.println("Tip amount: $"+tipamount);
+
+        //Calculate the Total Amount to pay by adding the total bill and tip amount
+        double totalamount = totalbill+tipamount;
+
+        //Display the total amount to be paid
+        System.out.println("Total amount to pay: $"+totalamount);
+
+
+
+
+
+    }
+}
