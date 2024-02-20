@@ -1,0 +1,71 @@
+//Import scanner class from the java util package
+import java.util.Scanner;
+
+//This class takes a string name as input and display the message with inputted name
+public class restaurantBill {
+
+    //The main method, the entry point of the program
+    public static void main(String[] args) {
+
+        //Create a scanner object named scanner to read input from the console
+        Scanner scanner = new Scanner(System.in);
+
+        //Prompt the user to enter the total number of people in the table
+        System.out.print("Enter the total number of people in the table: ");
+
+        //Read the total number of people in the table from the user
+        int numberOfPeople = scanner.nextInt();
+
+        //Prompt the user to enter the total bill amount
+        System.out.print("Enter the total bill amount: ");
+
+        //Read the total bill amount from the user
+        double totalBillAmount = scanner.nextDouble();
+
+        //Prompt the user to enter the percentage of tip
+        System.out.print("Enter the percentage of tip: ");
+
+        //Read the percentage of tip from the user
+        double tipPercentage = scanner.nextDouble();
+
+        //Calculate the service charge based on the number in the table
+        double serviceChargePercentage;
+
+        //Determine service charge percentage based on the number of people
+        if (numberOfPeople >= 1 && numberOfPeople <= 4) {
+
+            //This line determine the 5% service charge for 1 to 4 people
+            serviceChargePercentage = 0.05;
+
+        } else if (numberOfPeople >= 5 && numberOfPeople <= 7) {
+            //This line determine the 8% service charge for 5 to 7 people
+            serviceChargePercentage = 0.08;
+
+
+        } else {
+            //This line determine the 15% service charge for 8 or more people
+            serviceChargePercentage = 0.15;
+        }
+
+        //Calculate the tip amount
+        double tipAmount = totalBillAmount * (tipPercentage / 100);
+
+        //Calculate the service charge amount
+        double serviceChargeAmount = totalBillAmount * serviceChargePercentage;
+
+        //Calculate the total amount pay
+        double totalAmountToPay = totalBillAmount + tipAmount + serviceChargeAmount;
+
+        //Output the tip amount
+        System.out.println("Tip amount: $" + tipAmount);
+
+        //Output the service charge amount
+        System.out.println("Service charge amount: $ " + serviceChargeAmount);
+
+        //Output the total amount pay
+        System.out.println("Total amount pay: $ " + totalAmountToPay);
+
+        //Close the scanner
+        scanner.close();
+    }
+}
