@@ -1,0 +1,82 @@
+//Import a scanner class from the java.util package;
+
+import java.util.Scanner;
+
+
+
+//Declares a class named "TipAmount"
+
+public class TipAmount {
+
+
+
+    //Define the main method
+
+    public static void main(String[]args){
+
+        //Create a scanner object named scanner
+
+        Scanner scanner=new Scanner(System.in);
+
+
+
+        //Initialize a constant
+
+        final double PERCENTAGE=100.0;
+
+
+
+        //Display message"Enter total bill(PHP)to the screen
+
+        System.out.println("Enter total bill(PHP): ");
+
+
+
+        //Declare a double variable name bill
+
+        double bill=scanner.nextDouble();
+
+
+
+        //Display message"Enter percentage of tip" to the screen
+
+        System.out.println("Enter percentage of tip;: ");
+
+
+
+        //Declare an in variable name percentage
+
+        int percentage=scanner.nextInt();
+
+
+
+        //Declare a double variable name tip and calculate the tip amount
+
+        double tip=(bill*percentage)/PERCENTAGE;
+
+
+
+        //Declare a double amount and calculate a total amount
+
+        double amount=bill+tip;
+
+
+
+        //Display message "Tip amount" followed by the tip variable then the message "PHP"
+
+        System.out.println("Tip amount: "+tip+ " PHP");
+
+
+
+        //Display message "Total amount" followed by the amount variable then the message "PHP"
+
+        System.out.println("Total amount: "+amount+ " PHP");
+
+
+
+        //Close the scanner object
+
+        scanner.close();
+
+    }
+
