@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class TipCalculator {
+    public static void main(String[] args) {
+        // Create Scanner object to read user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user to enter total bill amount
+        System.out.print("Enter the total bill amount: ");
+        double totalBillAmount = scanner.nextDouble();
+
+        // Prompt user to enter tip percentage
+        System.out.print("Enter the tip percentage: ");
+        double tipPercentage = scanner.nextDouble();
+
+        // Calculate tip amount
+        double tipAmount = (totalBillAmount * tipPercentage) / 100;
+
+        // Calculate total amount to pay
+        double totalAmountToPay = totalBillAmount + tipAmount;
+
+        // Display tip amount and total amount to pay
+        System.out.println("Tip amount: $" + tipAmount);
+        System.out.println("Total amount to pay: $" + totalAmountToPay);
+
+        // Close scanner to prevent resource leak
+        scanner.close();
+    }
+}
