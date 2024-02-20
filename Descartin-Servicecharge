@@ -1,0 +1,154 @@
+//Imports the scanner class from the java.util package
+
+import java.util.Scanner;
+
+
+
+//Declares a new java class named "RestaurantBillCalculator"
+
+public class RestaurantBill{
+
+
+
+    //Declares the main method
+
+    public static void main(String[]args){
+
+
+
+    //Creates a new scanner object named "input"
+
+    Scanner input = new Scanner(System.in);
+
+
+
+    //Display a message asking the user to input the total number of people
+
+    System.out.println("Total number of people:");
+
+
+
+    //Declare an integer variable named "numOfPeople"
+
+    int numOfPeople = input.nextInt();
+
+
+
+    //Display a message asking the user to input the total bill amount
+
+    System.out.println("Total bill amount(PHP): ");
+
+
+
+    //Declare a double variable named "bill"
+
+    double bill = input.nextDouble();
+
+
+
+    //Display a message asking the user to input the percentage of tip
+
+    System.out.println("Percentage of tip: ");
+
+
+
+    //Declare an int variable named "tip"
+
+    int tip = input.nextInt();
+
+
+
+    //Declare four double constant variables
+
+    final double ONE_TO_FOUR = 0.05;
+
+    final double FIVE_TO_SEVEN = 0.08;
+
+    final double EIGHT = 0.15;
+
+    final double PERCENT = 100.0;
+
+
+
+    //Declare a double variable named "ServiceCharge"
+
+    double serviceCharge;
+
+
+
+    //Deploy an if condition
+
+    if(numOfPeople>=1 && numOfPeople<=4){
+
+
+
+        //Calculate the service charge
+
+        serviceCharge = bill * ONE_TO_FOUR;
+
+    }
+
+    //Deploy an if else condition
+
+    else if(numOfPeople>=5 && numOfPeople<=7) {
+
+
+
+        //Calculates the service charge
+
+        serviceCharge = bill * FIVE_TO_SEVEN;
+
+    }
+
+    //Deploy an else statement
+
+        else{
+
+
+
+            //Calculates the service charge
+
+        serviceCharge = bill * EIGHT;
+
+    }
+
+
+
+    //Declare a double variable names "TipAmount" and calculate the tip amount
+
+    double tipAmount = (bill*tip)/PERCENT;
+
+
+
+    //Declare a double variable named "TotalAmount" and calculate the total amount
+
+    double totalAmount = serviceCharge + tipAmount + bill;
+
+
+
+    //Display message "service charge :PHP " followed by the serviceCharge variable
+
+        System.out.println("service charge :PHP " +serviceCharge);
+
+
+
+    //Display message "Tip amount: " followed by the tipAmount variable
+
+        System.out.println("tip amount:  " + tipAmount);
+
+
+
+    //Display message "Total Amount " followed by the totalAmount variable
+
+        System.out.println("Total Amount: " +totalAmount);
+
+
+
+    //Close the input object
+
+        input.close();
+
+
+
+    }
+
