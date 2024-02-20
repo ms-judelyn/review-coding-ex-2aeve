@@ -1,0 +1,38 @@
+//Import the scanner class from the java.util package
+import java.util.Scanner;
+//This class takes in a string name as input and displays the message
+public class TipCalculator {
+    //Define the main() method
+    public static void main(String[] args) {
+
+        //Create a scanner object name input
+        Scanner scanner = new Scanner(System.in);
+
+        //Display the first message "What was the value of the bill?
+        System.out.print("What was the value of the bill?");
+
+        //It reads a double precision floating point number( a number with decimal points).
+        double bill = scanner.nextDouble();
+
+        //Display the second message "What percentage of tip would you like to leave?
+        System.out.print("What percentage of tip would you like to leave?");
+
+        //It reads the percentage.
+        double percentage = scanner.nextDouble();
+
+        //This serves as calculating tip amount based on the bill and percentage value.
+        double tip = (bill * percentage)/100;
+
+        //This calculate the total amount to be paid.
+        double totalAmount = bill + tip;
+
+        //Display the tip amount with a specific form of console.
+        System.out.printf(" Tip amount: "+tip);
+
+        //Display or print the total amount to be paid
+        System.out.printf(" Total amount to pay: "+totalAmount);
+
+        //Close the scanner code.
+        scanner.close();
+    }
+}
