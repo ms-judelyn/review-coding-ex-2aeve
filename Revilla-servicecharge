@@ -1,0 +1,56 @@
+//import scanner class to get user input
+import java.util.Scanner;
+
+//This line declares a public class named billCalculator
+public class billCalculator {
+
+    //Define main method
+    public static void main(String[] args) {
+
+        //Create a scanner object named input
+        Scanner scanner = new Scanner(System.in);
+        //Display message "Enter the total number of people in your table" to the screen
+        System.out.println("Enter the total number of people in you table");
+
+        //Read the interger value entered by the user and the store it in variable numPeople
+        int numPeople = scanner.nextInt();
+
+        //Display a message on the console asking the user to enter the total bill amount
+        System.out.print("Enter the total bill amount");
+
+        //reads the double value (decimal number)
+        double billAmount = scanner.nextDouble();
+
+        //Display a message on the console asking
+        System.out.print("Enter the percentage of the tip you want to leave: ");
+        //reads and double value (percentage)
+        double tipPercentage = scanner.nextDouble();
+
+        //declare the service charge variable
+        double serviceCharge;
+
+        //Calculate the service charge based on the number of people
+        if (numPeople <=4) {
+            serviceCharge = billAmount * 0.05;
+        } else if (numPeople <= 7) {
+            serviceCharge = billAmount * 0.08;
+        }else {
+            serviceCharge = billAmount * 0.15;
+
+            //calculate the tip amount
+            double tipAmount = billAmount * tipPercentage / 100;
+
+            //Calculate the total amount to pay
+            double totalAmount = billAmount + serviceCharge + tipAmount;
+
+            //display the result
+            System.out.println("Service Charge: $" + serviceCharge);
+            System.out.println("Tip Amount: $" + tipAmount);
+            System.out.println("Total Amount to pay: $" + totalAmount);
+        }
+    }
+
+
+
+
+}
