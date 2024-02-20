@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class BillCalculation{
+  public static void main(String[] args){
+	  Scanner scanner = new Scanner(System.in);
+	
+	  System.out.println("Enter the number of people");
+   	int numPeople = scanner.nextInt();
+	  System.out.println("Enter the bill amount");
+	  double billAmount= scanner.nextDouble();
+  	System.out.println("Enter the percentage:");
+  	double tipPercentage= scanner.nextDouble();
+
+	  double serviceChange;
+
+  	if (numPeople <= 4) {
+	      serviceCharge = 0.05 * billAmount;
+	  }else if (numPeople <= 7){
+	     serviceCharge = 0.08 * billAmount;
+	  }else {
+	     serviceChange = 0.15 * billAmount;
+  	}
+
+	 double tipAmount = tipPercentage *billAmount / 100.0;
+	 double totalAmount = billAmount + serviceChange + tipAmount;
+	
+	 System.out.println("Service charge:$" + serviceCharge);
+	 System.out.println("Tip amount :$" + tipAmount);
+	 System.out.println("Total amount: $" + totalAmount);
+	
+	 }
+ }
+}
