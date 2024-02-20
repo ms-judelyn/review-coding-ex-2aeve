@@ -1,0 +1,43 @@
+
+// Import the Scanner class from the java.util package
+import java.util.Scanner;
+
+// Blueprint for creating objects and contains the method and fields of the program
+public class TipCalculator {
+
+    //Define the main method
+    public static void main(String[] args) {
+
+        // Create a scanner object named input
+        Scanner scanner = new Scanner ( System.in);
+
+        // Print a message asking for the total bill amount
+        System.out.print ("Enter the total bill amount :");
+
+        // Read the total bill amount from the user input
+        double billAmount = scanner.nextDouble ();
+
+        // Print a message asking for the tip percentage
+        System.out.print ("Enter the tip percentage:");
+
+        // Read the tip percentage from user input
+        double tipPercentage = scanner.nextDouble();
+
+        // Calculate tip amount
+         double tipAmount = billAmount * (tipPercentage/100);
+
+         // Calculate the total amount to pay
+        double totalAmount = billAmount + tipAmount;
+
+        // Print the total amount and the total amount to pay
+        System.out.printf("Tip amount:$%.2f%n",tipAmount);
+
+        System.out.printf ("Total amount to pay:$%.2f%n", totalAmount);
+
+        //Close scanner object
+        scanner.close();
+
+        //This line end the main method
+    }
+    // This line ends the TipCalculator definition
+}
