@@ -1,0 +1,37 @@
+// Import Scanner class for user input
+import java.util.Scanner; 
+
+public class RestaurantBillCalculator {
+    public static void main(String[] args) {
+
+        // Initialize Scanner object for user input
+        Scanner scanner = new Scanner(System.in); 
+
+        // Prompt user to enter total bill amount
+        System.out.print("Enter total bill amount: "); 
+
+        // Read total bill amount from user input
+        double totalBill = scanner.nextDouble(); 
+
+        // Prompt user to enter tip percentage
+        System.out.print("Enter tip percentage (in %): "); 
+
+        // Read tip percentage from user input
+        double tipPercentage = scanner.nextDouble(); 
+
+        // Calculate tip amount
+        double tipAmount = totalBill * (tipPercentage / 100); 
+
+        // Calculate total amount to pay
+        double totalAmountToPay = totalBill + tipAmount;
+
+        // Display tip amount
+        System.out.println("Tip amount: $" + tipAmount);
+
+        // Display total amount to pay
+        System.out.println("Total amount to pay: $" + totalAmountToPay);
+
+        // Close Scanner object to prevent resource leak
+        scanner.close();
+    }
+}
