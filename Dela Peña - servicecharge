@@ -1,0 +1,66 @@
+//Import the scanner class from the java.util package
+import java.util.Scanner;
+//This class takes in a string name as input and displays the message
+public class RestaurantBill {
+    //Define the main() method
+    public static void main(String[] args) {
+
+        //Create a scanner object name input
+        Scanner scanner = new Scanner(System.in);
+
+        //Display the first 'Enter the total number of people in your table.
+        System.out.print("Enter the total number of people in your table:");
+
+        //It reads number of people in a table.
+        int numberOfPeople= scanner.nextInt();
+
+        //Display the second message"Enter the total bill".
+        System.out.print("Enter the total bill:");
+
+        //Serves as total bill amount of people in a table.
+        double totalBill=scanner.nextDouble();
+
+        //Display the third message.
+        System.out.print("Enter the tip percentage you want to leave (either 5%,8%,15%):");
+
+        //It reads the tip percentage given by the use.
+        double tipPercentage=scanner.nextDouble();
+
+        //Serves as calculating tip amount based on the total bill and tip percentage.
+        double tipAmount= totalBill*(tipPercentage/100);
+
+        //It reads the service charge amount.
+        double servicechargeAmount=10;
+
+        //It calculates a service.
+        if(numberOfPeople>=1&&numberOfPeople<=4) {
+            servicechargeAmount = totalBill * 0.05;
+        }else if (numberOfPeople>=5&&numberOfPeople<=7) {
+            servicechargeAmount = totalBill * 0.08;
+        } else {
+            servicechargeAmount = totalBill * 0.15;
+
+        //Calculate the final bill.
+        double finalBill=totalBill + tipAmount + servicechargeAmount;
+
+        //Display the tip amount
+        System.out.printf(" Tip amount: " + tipAmount);
+
+        //Display the service charge amount.
+            System.out.printf(" Service charge amount: " + servicechargeAmount);
+
+        //Display the final bill
+            System.out.printf(" The final bill: " + finalBill);
+
+        //Close the program.
+            scanner.close();
+        }
+
+
+
+
+
+
+    }
+
+}
